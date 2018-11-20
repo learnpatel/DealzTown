@@ -1,3 +1,4 @@
+using DealzTown.API.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DealzTown.API.Data
@@ -5,6 +6,6 @@ namespace DealzTown.API.Data
   public class DataContext : DbContext
   {
     public DataContext(DbContextOptions<DataContext> options) : base(options) { }
-    //public DbSet<MyProperty { get; set; }
+    public DbSet<User> Users { get; set; }
   }
 }
