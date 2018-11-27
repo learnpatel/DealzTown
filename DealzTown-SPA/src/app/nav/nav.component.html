@@ -7,6 +7,9 @@
         <a class="nav-link" [routerLink]="['/home']">Home</a>
       </li>
       <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/members']">Members</a>
+      </li>
+      <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/lists']">All Categories</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
