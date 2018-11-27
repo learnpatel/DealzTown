@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DealzTown.API.Data;
 using DealzTown.API.Dtos;
 using DealzTown.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -24,6 +25,7 @@ namespace DealzTown.API.Controllers
       this._repo = repo;
     }
 
+    [AllowAnonymous]
     [HttpPost("register")]
     public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
     {
@@ -44,6 +46,7 @@ namespace DealzTown.API.Controllers
       return StatusCode(201);
     }
 
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
     {
