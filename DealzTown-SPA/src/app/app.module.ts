@@ -1,7 +1,9 @@
+import { AlertifyService } from './_services/alertify.service';
 import { ErrorInteceptorProvider } from './_services/error.interceptor';
 import { AuthService } from './_services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -12,8 +14,8 @@ import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, HomeComponent, RegisterComponent],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
-  providers: [AuthService, ErrorInteceptorProvider],
+  imports: [BrowserModule, HttpClientModule, FormsModule, BsDropdownModule.forRoot()],
+  providers: [AuthService, ErrorInteceptorProvider, AlertifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
